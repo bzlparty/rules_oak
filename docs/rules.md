@@ -75,7 +75,7 @@ oak_library(<a href="#oak_library-name">name</a>, <a href="#oak_library-data">da
 ## oak_binary
 
 <pre>
-oak_binary(<a href="#oak_binary-name">name</a>, <a href="#oak_binary-srcs">srcs</a>, <a href="#oak_binary-entry">entry</a>, <a href="#oak_binary-kwargs">kwargs</a>)
+oak_binary(<a href="#oak_binary-name">name</a>, <a href="#oak_binary-srcs">srcs</a>, <a href="#oak_binary-entry_point">entry_point</a>, <a href="#oak_binary-kwargs">kwargs</a>)
 </pre>
 
 
@@ -87,7 +87,7 @@ oak_binary(<a href="#oak_binary-name">name</a>, <a href="#oak_binary-srcs">srcs<
 | :------------- | :------------- | :------------- |
 | <a id="oak_binary-name"></a>name |  <p align="center"> - </p>   |  none |
 | <a id="oak_binary-srcs"></a>srcs |  <p align="center"> - </p>   |  none |
-| <a id="oak_binary-entry"></a>entry |  <p align="center"> - </p>   |  <code>None</code> |
+| <a id="oak_binary-entry_point"></a>entry_point |  <p align="center"> - </p>   |  <code>None</code> |
 | <a id="oak_binary-kwargs"></a>kwargs |  <p align="center"> - </p>   |  none |
 
 

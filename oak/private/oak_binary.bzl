@@ -13,7 +13,7 @@ def _gather_artifact_runfiles(ctx):
     return ctx.runfiles(files = ctx.attr.data)
 
 def _oak_binary(ctx):
-    entry = ctx.file.entry
+    entry = ctx.file.entry_point
     output = _get_named_output_or_default(ctx, ctx.attr.name)
     inputs = gather_files(srcs = ctx.files.srcs + [entry], deps = ctx.attr.deps)
     args = _get_artifact_args(entry, output)
@@ -36,7 +36,7 @@ def _oak_binary(ctx):
 oak_binary = rule(
     _oak_binary,
     attrs = {
-        "entry": attr.label(
+        "entry_point": attr.label(
             mandatory = True,
             allow_single_file = True,
         ),

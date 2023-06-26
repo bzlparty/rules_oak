@@ -9,13 +9,13 @@ oak_bundle = _oak_bundle
 oak_library = _oak_library
 oak = _oak
 
-def oak_binary(name, srcs, entry = None, **kwargs):
-  if not entry and len(srcs) > 0:
-    entry = srcs[0]
+def oak_binary(name, srcs, entry_point = None, **kwargs):
+  if not entry_point and len(srcs) > 0:
+    entry_point = srcs[0]
 
   _oak_binary(
     name = name,
-    entry = entry,
+    entry_point = entry_point,
     srcs = srcs,
     **kwargs
   )
