@@ -1,0 +1,3 @@
+{ println: println } := import('fmt')
+
+fn say(msg) println(msg)

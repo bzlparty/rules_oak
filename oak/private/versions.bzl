@@ -1,14 +1,14 @@
-"""Mirror of release info
-
-TODO: generate this file from GitHub API"""
-
-# The integrity hashes can be computed with
-# shasum -b -a 384 [downloaded file] | awk '{ print $1 }' | xxd -r -p | base64
 TOOL_VERSIONS = {
-    "1.14.2": {
-        "x86_64-apple-darwin": "sha384-ws4+rANvv0YxM1SgIBUXSG9jT8dKw83nls6R5qYkEKzPUB+viBIEozSsyq2e6i+f",
-        "aarch64-apple-darwin": "sha384-HcvJbxoJtGSavkGu0e7CyD00cBlmDb0TBWJ4JSaNa70zuU3N7XlMOYm3bbQcAv2U",
-        "x86_64-pc-windows-msvc": "sha384-35YN6TKpT0L9qyRBmq48NucvyXEtHnkeC+txf2YZmmJTmOzrAKREA74BA0EZvpar",
-        "x86_64-unknown-linux-gnu": "sha384-QgGOwTaetxY0h5HWCKc/3ZtBs4N/fgaaORthn7UcEv++Idm9W+ntCCZRwvBdwHPD",
+    "0.1": {
+        "darwin": "sha384-IFGYZUufyvXU3EZvNteFaBBbQlAw1ZPJvDCCUViHiApuLDkyANXZvKJsWy8FM1Cb",
+        "linux": "sha384-SJmbqfFWdU7m4xS0Xq2kfjGEfq+41cCmvOfDgOpq4j9wLvlZYwQlhBCceBTjrCpX",
+    },
+    "0.2": {
+        "darwin": "sha384-ifyKA6CsaHTkRfwQyjlTKPC6nmEETshBVYwXEme8olnzvmWUDePod1S/JjaXbxjz",
+        "linux": "sha384-7mX7LWx1clH1MUtSoLQIk5ncc2hAhixt3UIGSJyTGI9g0P7XDiy1E855SrikQTw0",
+    },
+    "0.3": {
+        "darwin": "sha384-wT8x5iglKnGm5+nryH2SbfFGQh5yq7X5qjtkMXYmVtVAhTvPY09ptklW9tZqoa+f",
+        "linux": "sha384-jUe08kY/F7TQKBGzsGLNXTNAsGKq3zD0Glo7K7HuHzfU9cA6PjK8aOSl8TVqlToc",
     },
 }

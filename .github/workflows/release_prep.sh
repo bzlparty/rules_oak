@@ -18,7 +18,7 @@ cat << EOF
 2. Add to your \`MODULE.bazel\` file:
 
 \`\`\`starlark
-bazel_dep(name = "mgred_rules_oak", version = "${TAG:1}")
+bazel_dep(name = "rules_oak", version = "${TAG:1}")
 \`\`\`
 
 ## Using WORKSPACE
@@ -28,10 +28,10 @@ Paste this snippet into your `WORKSPACE.bazel` file:
 \`\`\`starlark
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
-    name = "mgred_rules_oak",
+    name = "rules_oak",
     sha256 = "${SHA}",
     strip_prefix = "${PREFIX}",
-    url = "https://github.com/mgred/rules_oak/releases/download/${TAG}/${ARCHIVE}",
+    url = "https://github.com/bzlparty/rules_oak/releases/download/${TAG}/${ARCHIVE}",
 )
 EOF
 

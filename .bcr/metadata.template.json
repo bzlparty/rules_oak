@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/mgred/rules_oak",
+  "homepage": "https://github.com/bzlparty/rules_oak",
   "maintainers": [],
-  "repository": ["github:mgred/rules_oak"],
+  "repository": ["github:bzlparty/rules_oak"],
   "versions": [],
   "yanked_versions": {}
 }

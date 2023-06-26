@@ -3,15 +3,35 @@ Add a basic smoke-test target below.
 """
 
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-# load("mgred_rules_oak//oak:defs.bzl", "...")
+load("@rules_oak//oak:defs.bzl", "oak", "oak_binary", "oak_library")
 
-# Replace with a usage of your rule/macro
-filegroup(name = "empty")
+oak(
+  name = "greeting",
+  srcs = ["greeting.oak"],
+  outputs = ["hello.txt"],
+  args = ["$@"],
+)
+
+oak_binary(
+  name = "say",
+  srcs = ["say.oak"],
+)
+
+oak_library(
+  name = "lib",
+  srcs = ["lib.oak"],
+)
+
+oak_binary(
+  name = "lib_say",
+  srcs = ["lib_say.oak"],
+  deps = [":lib"],
+)
 
 build_test(
     name = "smoke_test",
     targets = [
         # targets you add above
-        ":empty",
+        ":greeting",
     ],
 )

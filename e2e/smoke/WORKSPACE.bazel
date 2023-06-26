@@ -1,6 +1,6 @@
 # Override http_archive for local testing
 local_repository(
-    name = "mgred_rules_oak",
+    name = "rules_oak",
     path = "../..",
 )
 
@@ -14,6 +14,11 @@ local_repository(
 # you should fetch it *before* calling this.
 # Alternatively, you can skip calling this function, so long as you've
 # already fetched all the dependencies.
-load("@mgred_rules_oak//oak:repositories.bzl", "rules_oak_dependencies")
+load("@rules_oak//oak:repositories.bzl", "oak_register_toolchains", "rules_oak_dependencies")
 
 rules_oak_dependencies()
+
+oak_register_toolchains(
+  name = "oak",
+  oak_version = "0.3",
+)

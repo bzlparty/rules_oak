@@ -17,3 +17,37 @@ bzl_library(
     srcs = ["resolved_toolchain.bzl"],
     visibility = ["//oak:__subpackages__"],
 )
+
+bzl_library(
+    name = "lib",
+    srcs = ["lib.bzl"],
+    visibility = ["//oak:__subpackages__"],
+)
+
+bzl_library(
+    name = "oak",
+    srcs = ["oak.bzl"],
+    visibility = ["//oak:__subpackages__"],
+    deps = ["@aspect_bazel_lib//lib:expand_make_vars"],
+)
+
+bzl_library(
+    name = "oak_binary",
+    srcs = ["oak_binary.bzl"],
+    visibility = ["//oak:__subpackages__"],
+    deps = [":lib"],
+)
+
+bzl_library(
+    name = "oak_bundle",
+    srcs = ["oak_bundle.bzl"],
+    visibility = ["//oak:__subpackages__"],
+    deps = [":lib"],
+)
+
+bzl_library(
+    name = "oak_library",
+    srcs = ["oak_library.bzl"],
+    visibility = ["//oak:__subpackages__"],
+    deps = [":lib"],
+)

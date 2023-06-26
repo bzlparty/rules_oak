@@ -3,14 +3,14 @@
 ## Installation
 
 From the release you wish to use:
-<https://github.com/mgred/rules_oak/releases>
+<https://github.com/bzlparty/rules_oak/releases>
 copy the WORKSPACE snippet into your `WORKSPACE` file.
 
 To use a commit rather than a release, you can point at any SHA of the repo.
 
 For example to use commit `abc123`:
 
-1. Replace `url = "https://github.com/mgred/rules_oak/releases/download/v0.1.0/rules_oak-v0.1.0.tar.gz"` with a GitHub-provided source archive like `url = "https://github.com/mgred/rules_oak/archive/abc123.tar.gz"`
+1. Replace `url = "https://github.com/bzlparty/rules_oak/releases/download/v0.1.0/rules_oak-v0.1.0.tar.gz"` with a GitHub-provided source archive like `url = "https://github.com/bzlparty/rules_oak/archive/abc123.tar.gz"`
 1. Replace `strip_prefix = "rules_oak-0.1.0"` with `strip_prefix = "rules_oak-abc123"`
 1. Update the `sha256`. The easiest way to do this is to comment out the line, then Bazel will
    print a message with the correct value. Note that GitHub source archives don't have a strong

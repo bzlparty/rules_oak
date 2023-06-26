@@ -1,0 +1,9 @@
+fs := import('fs')
+fmt := import('fmt')
+cli := import('cli')
+
+args := cli.parse()
+
+fmt.println('BINDIR', env().BINDIR)
+
+fs.writeFile(args.verb, 'Hello, World')

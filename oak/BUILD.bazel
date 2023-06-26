@@ -33,16 +33,22 @@ bzl_library(
 )
 
 bzl_library(
-    name = "defs",
-    srcs = ["defs.bzl"],
-    visibility = ["//visibility:public"],
-)
-
-bzl_library(
     name = "extensions",
     srcs = ["extensions.bzl"],
     visibility = ["//visibility:public"],
     deps = [":repositories"],
+)
+
+bzl_library(
+    name = "defs",
+    srcs = ["defs.bzl"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//oak/private:oak",
+        "//oak/private:oak_binary",
+        "//oak/private:oak_bundle",
+        "//oak/private:oak_library",
+    ],
 )
 
 bzl_library(
