@@ -2,7 +2,7 @@
 
 module(
     name = "rules_oak",
-    version = "0.0.0",
+    version = "0.2.1",
     compatibility_level = 1,
 )
 
