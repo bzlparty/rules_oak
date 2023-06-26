@@ -19,6 +19,6 @@ load("@rules_oak//oak:repositories.bzl", "oak_register_toolchains", "rules_oak_d
 rules_oak_dependencies()
 
 oak_register_toolchains(
-  name = "oak",
-  oak_version = "0.3",
+    name = "oak",
+    oak_version = "0.3",
 )

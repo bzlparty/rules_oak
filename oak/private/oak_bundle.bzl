@@ -1,3 +1,5 @@
+"Oak bundle rule"
+
 load(":lib.bzl", "OAK_TOOLCHAIN_TYPE", "OakLibraryInfo", "gather_files", "run_oak")
 
 def _oak_bundle(ctx):
@@ -5,6 +7,7 @@ def _oak_bundle(ctx):
     inputs = gather_files(srcs = ctx.files.srcs + [entry_point], deps = ctx.attr.deps)
     runfiles = ctx.runfiles(ctx.attr.data)
     bundle_ext = ".oak"
+    args = []
 
     if ctx.attr.web:
         args.append("--web")
@@ -14,7 +17,8 @@ def _oak_bundle(ctx):
         bundle = ctx.outputs.out
     else:
         bundle = ctx.actions.declare_file(ctx.attr.name + bundle_ext)
-    args = ["--output", bundle.path, "--entry", entry_point.short_path]
+
+    args.extend(["--output", bundle.path, "--entry", entry_point.short_path])
     outputs = [bundle]
 
     run_oak(

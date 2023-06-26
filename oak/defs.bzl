@@ -10,12 +10,12 @@ oak_library = _oak_library
 oak = _oak
 
 def oak_binary(name, srcs, entry_point = None, **kwargs):
-  if not entry_point and len(srcs) > 0:
-    entry_point = srcs[0]
+    if not entry_point and len(srcs) > 0:
+        entry_point = srcs[0]
 
-  _oak_binary(
-    name = name,
-    entry_point = entry_point,
-    srcs = srcs,
-    **kwargs
-  )
+    _oak_binary(
+        name = name,
+        entry_point = entry_point,
+        srcs = srcs,
+        **kwargs
+    )

@@ -1,3 +1,5 @@
+"Common functions used by all rules"
+
 OAK_TOOLCHAIN_TYPE = "@rules_oak//oak:toolchain_type"
 
 OakLibraryInfo = provider(
@@ -8,9 +10,19 @@ OakLibraryInfo = provider(
 )
 
 def _get_toolchain_info(ctx):
-  return ctx.toolchains[OAK_TOOLCHAIN_TYPE].oakinfo
+    return ctx.toolchains[OAK_TOOLCHAIN_TYPE].oakinfo
 
 def write_oak_launcher(ctx, name):
+    """A script that can run oak
+
+    Args:
+      ctx: rule context
+      name: name of the launcher file
+
+    Returns:
+      launcher: File
+    """
+
     oak = _get_toolchain_info(ctx)
     launcher = ctx.actions.declare_file(name)
     content = """
@@ -27,12 +39,24 @@ def write_oak_launcher(ctx, name):
     return launcher
 
 def gather_files(srcs, deps):
+    """Gather oak dependencies"""
+
     return depset(
         srcs,
         transitive = [dep[OakLibraryInfo].deps for dep in deps],
     )
 
 def run_oak(ctx, args, outputs, inputs, cmd = "build"):
+    """Run an oak binary to build
+
+    Args:
+      ctx: rules context
+      args: list of arguments,
+      outputs: list of output files
+      inputs: list of input files
+      cmd: oak command
+    """
+
     oak = _get_toolchain_info(ctx)
     launcher = write_oak_launcher(ctx, "oak_%s_%s.sh" % (cmd, ctx.attr.name))
     arguments = ctx.actions.args()

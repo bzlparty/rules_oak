@@ -1,3 +1,5 @@
+"Oak binary rule"
+
 load(":lib.bzl", "OAK_TOOLCHAIN_TYPE", "OakLibraryInfo", "gather_files", "run_oak")
 
 def _get_named_output_or_default(ctx, filepath):

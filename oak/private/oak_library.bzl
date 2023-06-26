@@ -1,3 +1,5 @@
+"Oak library rule"
+
 load(":lib.bzl", "OakLibraryInfo", "gather_files")
 
 def _oak_library(ctx):

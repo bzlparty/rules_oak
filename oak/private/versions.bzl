@@ -1,3 +1,5 @@
+"""Toolchain dependecies"""
+
 TOOL_VERSIONS = {
     "0.1": {
         "darwin": "sha384-IFGYZUufyvXU3EZvNteFaBBbQlAw1ZPJvDCCUViHiApuLDkyANXZvKJsWy8FM1Cb",

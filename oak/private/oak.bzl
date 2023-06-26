@@ -1,3 +1,5 @@
+"""Oak rule"""
+
 load("@aspect_bazel_lib//lib:expand_make_vars.bzl", "expand_variables")
 
 def _oak_impl(ctx):
