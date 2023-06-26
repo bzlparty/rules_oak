@@ -12,7 +12,7 @@ def push_tag(name):
             """echo "Current tag: $(git tag -l | tail -1)" """,
             "read -p 'Enter tag: ' tag",
             "read -p 'Enter message: ' message",
-            """git tag --annotate "$tag" --message "$message" && git push --all""",
+            """git tag --annotate "$tag" --message "$message" && git push --all --tags""",
         ],
         is_executable = True,
     )
