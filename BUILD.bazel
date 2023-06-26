@@ -1,4 +1,7 @@
 load("@bazel_gazelle//:def.bzl", "gazelle", "gazelle_binary")
+load("//tools:defs.bzl", "push_tag")
+
+push_tag(name = "release")
 
 gazelle_binary(
     name = "gazelle_bin",
