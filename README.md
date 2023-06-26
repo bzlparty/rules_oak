@@ -1,5 +1,7 @@
 # Bazel rules for oak
 
+[![CI](https://github.com/bzlparty/rules_oak/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/bzlparty/rules_oak/actions/workflows/ci.yaml)
+
 ## Installation
 
 From the release you wish to use:
